@@ -6,11 +6,16 @@ using the following command: meteor npm install. Once meteor is installed run th
 You can then navigate to your localhost found at http://localhost:3000. Then you are ready to go!
 
 Regular User Page Breakdown:
+
 Landing page: Here is the homepage that will be shown the first time you navigate to the website.
+
 Sign up: This page is where you would create your own account.
+
 Log in: Here is where you would go to log in if your account was already created.
+
 Add Contact: This is the page where you would be able to add in new contacts. There are different fields that you
         can add such as their name, address, a photo of them and a description of them.
+
 List Contacts: This page will list all your contacts that you have added. There is also the functionality to add
         a timed stamped note to a specific contact.
       
