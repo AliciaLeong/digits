@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card, Image, Feed, Button } from 'semantic-ui-react';
+import { Card, Image, Feed, Button, Modal } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 import Note from '/imports/ui/components/Note';
 import AddNote from '/imports/ui/components/AddNote';
 import { Bert } from 'meteor/themeteorchef:bert';
 import { Contacts } from '/imports/api/contact/contact';
+// import { Modal } from 'semantic-ui-react/dist/commonjs/modules/Modal';
 
 /** Renders a single row in the List Contact table. See pages/ListContact.jsx. */
 class Contact extends React.Component {
@@ -50,7 +51,15 @@ class Contact extends React.Component {
           <Card.Content extra>
             <AddNote owner={this.props.contact.owner} contactId={this.props.contact._id}/>
           </Card.Content>
-          <Card.Content extra><Button basic onClick={this.onClick}>Delete</Button></Card.Content>
+          <Card.Content>
+            <Modal trigger={<Button>Delete</Button>}>
+              <Modal.Content>
+              <Modal.Header>Are you sure you want to delete?</Modal.Header>
+              <Modal.Description><Button basic onClick={this.onClick}>Yes</Button></Modal.Description>
+              </Modal.Content>
+            </Modal>
+          </Card.Content>
+          {/* <Card.Content extra><Button basic onClick={this.onClick}>Delete</Button></Card.Content> */}
         </Card>
     );
   }
